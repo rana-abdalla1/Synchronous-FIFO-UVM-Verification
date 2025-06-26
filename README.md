@@ -55,13 +55,15 @@ Synchronous-FIFO-UVM-Verification/
 │   └── FIFO_Coverage.sv        # Functional coverage collector
 │
 ├── Assertion-Based Verification/
-    └── FIFO_SVA.sv             # SystemVerilog Assertion
+│   └── FIFO_SVA.sv             # SystemVerilog Assertions
+            # Legacy testbench (educational)
+```
 
 ## ✨ Features
 
 ### FIFO Design Features
 - **Parameterized Width and Depth**: Configurable data width (default 16-bit) and depth (default 8 entries)
-- **Standard FIFO Interface**: Read/write enables, data ports, status flags
+- **Standard FIFO Interface**: Read/write enables, data ports, status flags  
 - **Status Flags**: Empty, full, almost_empty, almost_full indicators
 - **Error Detection**: Overflow and underflow detection with flags
 - **Write Acknowledge**: Confirmation of successful write operations
@@ -93,9 +95,11 @@ Synchronous-FIFO-UVM-Verification/
 
 ### 1. Clone/Download the Project
 ```bash
+# Navigate to your workspace
+cd /path/to/your/workspace
+```
 
-
-### Compile and Run (ModelSim/QuestaSim)
+### 2. Compile and Run (ModelSim/QuestaSim)
 ```bash
 # Using the provided script
 vsim -do run.do
