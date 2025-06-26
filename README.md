@@ -14,9 +14,7 @@ A comprehensive SystemVerilog and UVM-based verification environment for a param
 - [Coverage Analysis](#coverage-analysis)
 - [Advanced Features](#advanced-features)
 - [Educational Resources](#educational-resources)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## 🎯 Overview
 
@@ -32,7 +30,7 @@ This project implements a complete verification environment for a parameterized 
 ## 🏗️ Project Structure
 
 ```
-Project_2/
+Synchronous-FIFO-UVM-Verification/
 ├── README.md                    # This file
 ├── run.do                       # ModelSim/QuestaSim simulation script
 ├── final_src1.txt              # File list for compilation
@@ -57,12 +55,7 @@ Project_2/
 │   └── FIFO_Coverage.sv        # Functional coverage collector
 │
 ├── Assertion-Based Verification/
-│   └── FIFO_SVA.sv             # SystemVerilog Assertions
-│
-└── Legacy/Reference Files/
-    ├── FIFO_transaction.sv     # Legacy transaction class
-    └── FIFO_tb.sv              # Legacy testbench (educational)
-```
+    └── FIFO_SVA.sv             # SystemVerilog Assertion
 
 ## ✨ Features
 
@@ -282,79 +275,8 @@ make corner_case_tests
 make performance_tests
 ```
 
-## 📖 Educational Resources
 
-### Learning Path
 
-1. **Beginner**: Start with `FIFO.sv` and `FIFO_interface.sv`
-2. **Intermediate**: Study UVM components (`FIFO_agent.sv`, `FIFO_env.sv`)
-3. **Advanced**: Explore coverage (`FIFO_Coverage.sv`) and assertions (`FIFO_SVA.sv`)
-
-### Key Concepts Demonstrated
-
-- **SystemVerilog Interfaces**: Modern interface-based design
-- **UVM Methodology**: Industry-standard verification approach
-- **Constrained Random Testing**: Intelligent stimulus generation
-- **Functional Coverage**: Coverage-driven verification
-- **Assertion-Based Verification**: Real-time property checking
-- **Self-Checking Testbenches**: Automated result verification
-
-### Code Examples
-
-Each file includes comprehensive examples and documentation:
-
-```systemverilog
-// Example: Basic sequence usage
-class my_custom_sequence extends FIFO_base_sequence;
-    `uvm_object_utils(my_custom_sequence)
-    
-    virtual task body();
-        repeat(10) begin
-            `uvm_do_with(req, {
-                operation == WRITE;
-                data_in inside {[16'h1000:16'h1FFF]};
-            })
-        end
-    endtask
-endclass
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues and Solutions
-
-#### Compilation Issues
-```bash
-# Issue: Package not found
-# Solution: Check file order in final_src1.txt
-
-# Issue: UVM not found
-# Solution: Ensure UVM library is properly linked
-# For ModelSim: vlog -L $UVM_HOME/src
-```
-
-#### Runtime Issues
-```bash
-# Issue: Simulation hangs
-# Solution: Check timeout settings
-vsim work.top +SIM_TIMEOUT=50000
-
-# Issue: No coverage data
-# Solution: Enable coverage collection
-vsim work.top +ENABLE_COVERAGE
-```
-
-#### Debug Tips
-```systemverilog
-// Enable detailed logging
-+UVM_VERBOSITY=UVM_DEBUG
-
-// Dump specific signals
-+DUMP_SIGNALS="fifo_*"
-
-// Enable assertion reporting
-+ASSERTION_REPORT=1
-```
 
 ### Performance Optimization
 
@@ -404,59 +326,3 @@ covergroup my_custom_cg;
     // Custom coverage points
 endgroup
 ```
-
-## 🤝 Contributing
-
-### Development Guidelines
-
-1. **Code Style**: Follow existing naming conventions and formatting
-2. **Documentation**: Add comprehensive comments for new features
-3. **Testing**: Ensure new features are thoroughly tested
-4. **Coverage**: Maintain or improve coverage metrics
-
-### Submission Process
-
-1. Fork the repository
-2. Create feature branch
-3. Implement changes with tests
-4. Update documentation
-5. Submit pull request
-
-## 📄 License
-
-This project is provided for educational and research purposes. Please refer to your institution's guidelines for academic use.
-
-## 📞 Support
-
-### Documentation
-- **Inline Comments**: Comprehensive documentation in each file
-- **UVM Reference**: [Accellera UVM Documentation](https://www.accellera.org/downloads/standards/uvm)
-- **SystemVerilog Reference**: IEEE 1800-2017 Standard
-
-### Community
-- **Issues**: Report bugs and feature requests
-- **Discussions**: Ask questions and share experiences
-- **Wiki**: Additional documentation and tutorials
-
----
-
-## 🎯 Project Highlights
-
-This FIFO verification project demonstrates:
-
-✅ **Professional Quality**: Industry-standard verification methodology  
-✅ **Educational Value**: Comprehensive learning resource  
-✅ **Practical Application**: Real-world verification techniques  
-✅ **Extensibility**: Easy to modify and enhance  
-✅ **Best Practices**: Modern SystemVerilog and UVM implementation  
-
-### Ready for:
-- 🎓 **Academic Projects**
-- 🏢 **Professional Development**
-- 📚 **Learning and Training**
-- 🔬 **Research and Experimentation**
-
----
-
-*Last Updated: June 2025*
-*Version: 2.0*
