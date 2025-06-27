@@ -1,6 +1,6 @@
 # FIFO Verification Project
 
-A comprehensive SystemVerilog and UVM-based verification environment for a parameterized FIFO (First-In-First-Out) design. This project demonstrates industry-standard verification methodologies and serves as an excellent educational resource for learning SystemVerilog and UVM.
+A comprehensive SystemVerilog and UVM-based verification environment for a parameterized FIFO (First-In-First-Out) design. 
 
 ## 📋 Table of Contents
 
